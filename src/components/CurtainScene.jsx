@@ -428,7 +428,7 @@ function BirthdayContent({ visible, removeCurtains }) {
             anchorX="center"
             anchorY="middle"
           >
-            May all your dreams come true! 🌟
+            May all your dreams come true! BEST sister ever! ❤️
           </Text>
         </group>
       )}
