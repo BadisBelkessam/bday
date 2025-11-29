@@ -365,21 +365,21 @@ function BirthdayContent({ visible, removeCurtains }) {
         anchorX="center"
         anchorY="middle"
       >
-        🎉 SURPRISE! 🎉
+        🎉 SURPRISE!   🎉
       </Text>
       
       <Text
-        position={[0, 0, -1]}
+        position={[0.3, 0, -1]}
         fontSize={0.5}
         color={PURPLE_COLORS.light}
         anchorX="center"
         anchorY="middle"
       >
-        Happy Birthday Sarah!
+        Happy Birthday Sarah!!!
       </Text>
       
       {/* Birthday cake - center piece with gentle rotation */}
-      <mesh ref={cakeRef} position={[0, -1.5, -1]}>
+      <mesh ref={cakeRef} position={[0, -1.7, -1]}>
         <cylinderGeometry args={[0.8, 1, 0.6, 16]} />
         <meshStandardMaterial color={PURPLE_COLORS.accent} />
       </mesh>
@@ -388,7 +388,7 @@ function BirthdayContent({ visible, removeCurtains }) {
       {[...Array(totalCandles)].map((_, i) => (
         <AnimatedCandle
           key={i}
-          position={[Math.cos(i * 0.8) * 0.6, -0.9, Math.sin(i * 0.8) * 0.6 - 1]}
+          position={[Math.cos(i * 0.8) * 0.6, -1.2, Math.sin(i * 0.8) * 0.6 - 1]}
           index={i}
           isBlown={blownCandles.includes(i)}
           onBlow={handleCandleBlow}
@@ -398,13 +398,24 @@ function BirthdayContent({ visible, removeCurtains }) {
       {/* Make a wish instruction */}
       {showWishText && !allCandlesBlown && (
         <Text
-          position={[0, -2.5, -1]}
+          position={[0, -2.6, -1]}
           fontSize={0.3}
           color={PURPLE_COLORS.accent}
           anchorX="center"
           anchorY="middle"
         >
-          🕯️ Blow the candles to Make a Wish! 🕯️
+          🕯️ Blow the candles to Make a Wish!   🕯️
+        </Text>
+      )}
+      {showWishText && !allCandlesBlown && (
+        <Text
+          position={[0, -2.9, -1]}
+          fontSize={0.2}
+          color={PURPLE_COLORS.accent}
+          anchorX="center"
+          anchorY="middle"
+        >
+          23 years = 2+3 = 5 candles!
         </Text>
       )}
       
@@ -418,11 +429,11 @@ function BirthdayContent({ visible, removeCurtains }) {
             anchorX="center"
             anchorY="middle"
           >
-            ✨ Wish Made! ✨
+            ✨ Wish Made!   ✨
           </Text>
           
           <Text
-            position={[0, -1.1, -1]}
+            position={[0, -2.6, -1]}
             fontSize={0.2}
             color={PURPLE_COLORS.light}
             anchorX="center"
@@ -436,7 +447,7 @@ function BirthdayContent({ visible, removeCurtains }) {
       {/* Orbit controls instruction after curtains are removed */}
       {removeCurtains && (
         <Text
-          position={[0, -3, 0]}
+          position={[0, -3.3, 0]}
           fontSize={0.2}
           color={PURPLE_COLORS.light}
           anchorX="center"
@@ -507,13 +518,24 @@ export default function CurtainScene() {
           anchorX="center"
           anchorY="middle"
         >
-          🎭 Click Anywhere to Open! 🎭
+          🎭 Click Anywhere to Open!   🎭
         </Text>
       )}
       
       {!curtainsOpen && (
         <Text
           position={[0, -2.7, 2]}
+          fontSize={0.3}
+          color={PURPLE_COLORS.light}
+          anchorX="center"
+          anchorY="middle"
+        >
+          Hello there young lady..
+        </Text>
+      )}
+      {!curtainsOpen && (
+        <Text
+          position={[0, -3, 2]}
           fontSize={0.2}
           color={PURPLE_COLORS.light}
           anchorX="center"
